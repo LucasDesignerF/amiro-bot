@@ -3,120 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amiro Bot - O Futuro da Gestão no Discord</title>
-    <meta name="description" content="Amiro Bot é um bot multifuncional para Discord, com economia, moderação, música e diversão. Transforme seu servidor agora!">
+    <title>Amiro Bot: Bot Multifuncional para Discord</title>
+    <meta name="description" content="Amiro Bot para Discord: economia, moderação, música e diversão. Gerencie seu servidor com estilo!">
+    <meta name="keywords" content="Amiro Bot, bot Discord, economia Discord, moderação Discord, música Discord, gerenciamento de servidor">
+    <meta name="author" content="Amiro Bot Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://amiro-bot.pages.dev">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Amiro Bot: Transforme seu Servidor Discord">
+    <meta property="og:description" content="Amiro Bot oferece economia, moderação, música e mais para seu servidor Discord. Adicione agora!">
+    <meta property="og:url" content="https://amiro-bot.pages.dev">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://amiro-bot.pages.dev/favicon.png">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Amiro Bot: Bot Multifuncional para Discord">
+    <meta name="twitter:description" content="Gerencie seu servidor Discord com Amiro Bot: economia, moderação, música e diversão!">
+    <meta name="twitter:image" content="https://amiro-bot.pages.dev/favicon.png">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.png">
+    <!-- CDNs -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Amiro Bot",
+        "operatingSystem": "Discord",
+        "applicationCategory": "SocialNetworkingApplication",
+        "description": "Amiro Bot é um bot multifuncional para Discord, com recursos de economia, moderação, música e diversão.",
+        "url": "https://amiro-bot.pages.dev",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000000;
-            color: #ffffff;
-            overflow-x: hidden;
-            position: relative;
+        body{font-family:'Inter',sans-serif;background-color:#000000;color:#ffffff;overflow-x:hidden;position:relative;}
+        .hero-bg{background:linear-gradient(to bottom,#1a1a1a,#000000);}
+        .particles{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;background:radial-gradient(circle,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:40px 40px;animation:particles 20s linear infinite;}
+        @keyframes particles{0%{background-position:0 0;}100%{background-position:40px 40px;}}
+        .feature-card{background-color:#1a1a1a;border:1px solid #0a0a0a;transition:transform 0.3s ease,box-shadow 0.3s ease;}
+        .feature-card:hover{transform:translateY(-5px);box-shadow:0 10px 20px rgba(0,0,0,0.5);}
+        .btn-primary{background:linear-gradient(45deg,#0a0a0a,#2a2a2a);color:#ffffff;transition:transform 0.3s ease,box-shadow 0.3s ease;}
+        .btn-primary:hover{transform:scale(1.05);box-shadow:0 0 15px rgba(255,255,255,0.3);}
+        .icon{font-size:2rem;color:#ffffff;transition:transform 0.3s ease;}
+        .feature-card:hover .icon{transform:scale(1.1);}
+        .fade-in{opacity:0;transform:translateY(20px);animation:fadeIn 0.8s ease-out forwards;}
+        @keyframes fadeIn{to{opacity:1;transform:translateY(0);}}
+        .nav-link{position:relative;}
+        .nav-link::after{content:'';position:absolute;width:0;height:2px;bottom:-2px;left:0;background-color:#ffffff;transition:width 0.3s ease;}
+        .nav-link:hover::after{width:100%;}
+        .menu-toggle{display:none;}
+        .nav-menu{display:flex;}
+        @media (max-width:640px){
+            .menu-toggle{display:block;cursor:pointer;}
+            .nav-menu{display:none;flex-direction:column;width:100%;position:absolute;top:60px;left:0;background:#1a1a1a;padding:1rem;}
+            .nav-menu.active{display:flex;}
+            .icon{font-size:1.5rem;}
         }
-        .hero-bg {
-            background: linear-gradient(to bottom, #1a1a1a, #000000);
-        }
-        .particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-            animation: particles 20s linear infinite;
-        }
-        @keyframes particles {
-            0% { background-position: 0 0; }
-            100% { background-position: 40px 40px; }
-        }
-        .feature-card {
-            background-color: #1a1a1a;
-            border: 1px solid #0a0a0a;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-        }
-        .btn-primary {
-            background: linear-gradient(45deg, #0a0a0a, #2a2a2a);
-            color: #ffffff;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-        }
-        .icon {
-            font-size: 2rem;
-            color: #ffffff;
-            transition: transform 0.3s ease;
-        }
-        .feature-card:hover .icon {
-            transform: scale(1.1);
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-        @keyframes fadeIn {
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #ffffff;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .menu-toggle {
-            display: none;
-        }
-        .nav-menu {
-            display: flex;
-        }
-        @media (max-width: 640px) {
-            .menu-toggle {
-                display: block;
-                cursor: pointer;
-            }
-            .nav-menu {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background: #1a1a1a;
-                padding: 1rem;
-            }
-            .nav-menu.active {
-                display: flex;
-            }
-            .icon {
-                font-size: 1.5rem;
-            }
-        }
-        @media (min-width: 768px) {
-            .icon {
-                font-size: 2.5rem;
-            }
-        }
+        @media (min-width:768px){.icon{font-size:2.5rem;}}
     </style>
 </head>
 <body>
@@ -127,120 +78,124 @@
     <header class="hero-bg text-white py-4 relative z-10">
         <div class="container mx-auto px-4 flex items-center justify-between">
             <div class="flex items-center space-x-4">
-                <i class='bx bxs-bot icon'></i>
+                <i class='bx bxs-bot icon' aria-hidden="true"></i>
                 <h1 class="text-2xl sm:text-3xl font-extrabold">Amiro Bot</h1>
             </div>
-            <i class='bx bx-menu menu-toggle icon sm:hidden'></i>
-            <nav class="nav-menu flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <a href="#features" class="text-base sm:text-lg nav-link flex items-center"><i class='bx bx-star mr-2'></i>Recursos</a>
-                <a href="#contact" class="text-base sm:text-lg nav-link flex items-center"><i class='bx bx-message-square-detail mr-2'></i>Contato</a>
-                <a href="https://discord.com/oauth2/authorize?client_id=1367847025856610334&permissions=8&integration_type=0&scope=bot+applications.commands" class="btn-primary px-4 py-2 rounded-full font-semibold flex items-center"><i class='bx bx-plus-circle mr-2'></i>Convidar Bot</a>
+            <i class='bx bx-menu menu-toggle icon sm:hidden' aria-label="Toggle menu"></i>
+            <nav class="nav-menu flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6" aria-label="Navegação principal">
+                <a href="#features" class="text-base sm:text-lg nav-link flex items-center"><i class='bx bx-star mr-2' aria-hidden="true"></i>Recursos</a>
+                <a href="#contact" class="text-base sm:text-lg nav-link flex items-center"><i class='bx bx-message-square-detail mr-2' aria-hidden="true"></i>Contato</a>
+                <a href="https://discord.com/oauth2/authorize?client_id=1367847025856610334&permissions=8&integration_type=0&scope=bot+applications.commands" class="btn-primary px-4 py-2 rounded-full font-semibold flex items-center" aria-label="Convidar Amiro Bot para seu servidor"><i class='bx bx-plus-circle mr-2' aria-hidden="true"></i>Convidar Bot</a>
             </nav>
         </div>
     </header>
 
-    <!-- Seção de Apresentação -->
-    <section class="py-12 bg-black relative z-10">
-        <div class="container mx-auto px-4 text-center fade-in">
-            <i class='bx bxs-rocket icon mb-4'></i>
-            <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-4">Amiro Bot: O Futuro do Discord</h2>
-            <p class="text-base sm:text-lg text-gray-200 mb-6 max-w-2xl mx-auto animate-pulse">
-                Revolucione seu servidor com economia dinâmica, moderação avançada, música envolvente e diversão sem limites.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="https://discord.com/oauth2/authorize?client_id=1367847025856610334&permissions=8&integration_type=0&scope=bot+applications.commands" class="btn-primary px-6 py-3 rounded-full font-semibold flex items-center justify-center"><i class='bx bx-bot mr-2'></i>Adicionar ao Discord</a>
-                <a href="https://amiro-bot.discloud.app" class="bg-black border border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black flex items-center justify-center"><i class='bx bx-tachometer mr-2'></i>Acessar Dashboard</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção de Recursos -->
-    <section id="features" class="py-12 bg-black relative z-10">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-white text-center mb-12 flex items-center justify-center fade-in"><i class='bx bx-cog mr-2'></i>Recursos do Amiro Bot</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Economia -->
-                <div class="feature-card p-6 rounded-lg fade-in">
-                    <i class='bx bxs-coin-stack icon mb-4'></i>
-                    <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">Economia</h3>
-                    <p class="text-gray-200 text-sm sm:text-base">
-                        Crie uma economia vibrante com "sonhos" para engajar seus membros em eventos e jogos.
-                    </p>
-                </div>
-                <!-- Moderação -->
-                <div class="feature-card p-6 rounded-lg fade-in" style="animation-delay: 0.2s;">
-                    <i class='bx bxs-shield-alt-2 icon mb-4'></i>
-                    <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">Moderação</h3>
-                    <p class="text-gray-200 text-sm sm:text-base">
-                        Ferramentas avançadas para avisos, expulsões e banimentos, gerenciáveis via dashboard.
-                    </p>
-                </div>
-                <!-- Música -->
-                <div class="feature-card p-6 rounded-lg fade-in" style="animation-delay: 0.4s;">
-                    <i class='bx bxs-music icon mb-4'></i>
-                    <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">Música</h3>
-                    <p class="text-gray-200 text-sm sm:text-base">
-                        Toque músicas de alta qualidade e gerencie filas para animar seu servidor.
-                    </p>
-                </div>
-                <!-- Jogos -->
-                <div class="feature-card p-6 rounded-lg fade-in" style="animation-delay: 0.6s;">
-                    <i class='bx bxs-joystick icon mb-4'></i>
-                    <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">Jogos</h3>
-                    <p class="text-gray-200 text-sm sm:text-base">
-                        Jogos interativos integrados para manter seus membros engajados e entretidos.
-                    </p>
-                </div>
-                <!-- Diversão -->
-                <div class="feature-card p-6 rounded-lg fade-in" style="animation-delay: 0.8s;">
-                    <i class='bx bxs-smile icon mb-4'></i>
-                    <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">Diversão</h3>
-                    <p class="text-gray-200 text-sm sm:text-base">
-                        Comandos divertidos para criar um ambiente leve e descontraído no servidor.
-                    </p>
-                </div>
-                <!-- Dashboard -->
-                <div class="feature-card p-6 rounded-lg fade-in" style="animation-delay: 1s;">
-                    <i class='bx bxs-dashboard icon mb-4'></i>
-                    <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">Dashboard Web</h3>
-                    <p class="text-gray-200 text-sm sm:text-base">
-                        Interface web intuitiva em <a href="https://amiro-bot.discloud.app" class="text-white hover:underline">amiro-bot.discloud.app</a>.
-                    </p>
+    <!-- Seção Principal -->
+    <main>
+        <!-- Seção de Apresentação -->
+        <section class="py-12 bg-black relative z-10">
+            <div class="container mx-auto px-4 text-center fade-in">
+                <i class='bx bxs-rocket icon mb-4' aria-hidden="true"></i>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-white mb-4">Amiro Bot: O Futuro do Discord</h1>
+                <p class="text-base sm:text-lg text-gray-200 mb-6 max-w-2xl mx-auto animate-pulse">
+                    Revol-tooltip: Adicione o Amiro Bot ao seu servidor Discord para gerenciar economia, moderação, música e mais com uma interface moderna.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1367847025856610334&permissions=8&integration_type=0&scope=bot+applications.commands" class="btn-primary px-6 py-3 rounded-full font-semibold flex items-center justify-center" aria-label="Adicionar Amiro Bot ao Discord"><i class='bx bx-bot mr-2' aria-hidden="true"></i>Adicionar ao Discord</a>
+                    <a href="https://amiro-bot.discloud.app" class="bg-black border border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black flex items-center justify-center" aria-label="Acessar dashboard do Amiro Bot"><i class='bx bx-tachometer mr-2' aria-hidden="true"></i>Acessar Dashboard</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Seção de Contato -->
-    <section id="contact" class="py-12 bg-black relative z-10">
-        <div class="container mx-auto px-4 text-center fade-in">
-            <i class='bx bxs-contact icon mb-4'></i>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">Entre em Contato</h2>
-            <p class="text-base sm:text-lg text-gray-200 mb-6 max-w-2xl mx-auto">
-                Tem dúvidas ou sugestões? Junte-se ao nosso servidor de suporte no Discord!
-            </p>
-            <a href="https://discord.gg/SEU_SERVIDOR_SUPORTE" class="btn-primary px-6 py-3 rounded-full font-semibold flex items-center justify-center mx-auto"><i class='bx bxs-chat mr-2'></i>Servidor de Suporte</a>
-        </div>
-    </section>
+        <!-- Seção de Recursos -->
+        <section id="features" class="py-12 bg-black relative z-10">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white text-center mb-12 flex items-center justify-center fade-in"><i class='bx bx-cog mr-2' aria-hidden="true"></i>Recursos do Amiro Bot</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="feature-card p-6 rounded-lg fade-in">
+                        <i class='bx bxs-coin-stack icon mb-4' aria-hidden="true"></i>
+                        <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">Economia</h3>
+                        <p class="text-gray-200 text-sm sm:text-base">
+                            Crie uma economia vibrante com "sonhos" para engajar seus membros em eventos e jogos no Discord.
+                        </p>
+                    </div>
+                    <div class="feature-card p-6 rounded-lg fade-in" style="animation-delay:0.2s;">
+                        <i class='bx bxs-shield-alt-2 icon mb-4' aria-hidden="true"></i>
+                        <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">Moderação</h3>
+                        <p class="text-gray-200 text-sm sm:text-base">
+                            Ferramentas avançadas para avisos, expulsões e banimentos, gerenciáveis via dashboard do Amiro Bot.
+                        </p>
+                    </div>
+                    <div class="feature-card p-6 rounded-lg fade-in" style="animation-delay:0.4s;">
+                        <i class='bx bxs-music icon mb-4' aria-hidden="true"></i>
+                        <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">Música</h3>
+                        <p class="text-gray-200 text-sm sm:text-base">
+                            Toque músicas de alta qualidade e gerencie filas para animar seu servidor Discord.
+                        </p>
+                    </div>
+                    <div class="feature-card p-6 rounded-lg fade-in" style="animation-delay:0.6s;">
+                        <i class='bx bxs-joystick icon mb-4' aria-hidden="true"></i>
+                        <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">Jogos</h3>
+                        <p class="text-gray-200 text-sm sm:text-base">
+                            Jogos interativos integrados para manter seus membros engajados no Discord.
+                        </p>
+                    </div>
+                    <div class="feature-card p-6 rounded-lg fade-in" style="animation-delay:0.8s;">
+                        <i class='bx bxs-smile icon mb-4' aria-hidden="true"></i>
+                        <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">Diversão</h3>
+                        <p class="text-gray-200 text-sm sm:text-base">
+                            Comandos divertidos para criar um ambiente leve no seu servidor Discord.
+                        </p>
+                    </div>
+                    <div class="feature-card p-6 rounded-lg fade-in" style="animation-delay:1s;">
+                        <i class='bx bxs-dashboard icon mb-4' aria-hidden="true"></i>
+                        <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">Dashboard Web</h3>
+                        <p class="text-gray-200 text-sm sm:text-base">
+                            Interface web intuitiva em <a href="https://amiro-bot.discloud.app" class="text-white hover:underline" rel="nofollow">amiro-bot.discloud.app</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contact" class="py-12 bg-black relative z-10">
+            <div class="container mx-auto px-4 text-center fade-in">
+                <i class='bx bxs-contact icon mb-4' aria-hidden="true"></i>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">Entre em Contato</h2>
+                <p class="text-base sm:text-lg text-gray-200 mb-6 max-w-2xl mx-auto">
+                    Tem dúvidas ou sugestões? Junte-se ao nosso servidor de suporte no Discord para ajuda com o Amiro Bot!
+                </p>
+                <a href="https://discord.gg/SEU_SERVIDOR_SUPORTE" class="btn-primary px-6 py-3 rounded-full font-semibold flex items-center justify-center mx-auto" aria-label="Acessar servidor de suporte do Amiro Bot"><i class='bx bxs-chat mr-2' aria-hidden="true"></i>Servidor de Suporte</a>
+            </div>
+        </section>
+    </main>
 
     <!-- Rodapé -->
     <footer class="bg-black border-t border-gray-900 text-white py-6 relative z-10">
         <div class="container mx-auto px-4 text-center">
-            <p class="flex items-center justify-center text-sm sm:text-base"><i class='bx bxs-copyright mr-2'></i>© 2025 Amiro Bot. Todos os direitos reservados.</p>
+            <p class="flex items-center justify-center text-sm sm:text-base"><i class='bx bxs-copyright mr-2' aria-hidden="true"></i>© 2025 Amiro Bot. Todos os direitos reservados.</p>
             <p class="mt-2 flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm sm:text-base">
-                <a href="https://github.com/SEU_USUARIO/amiro-bot" class="text-gray-200 hover:underline flex items-center"><i class='bx bxl-github mr-1'></i>GitHub</a>
-                <a href="https://amiro-bot.discloud.app" class="text-gray-200 hover:underline flex items-center"><i class='bx bxs-tachometer mr-1'></i>Dashboard</a>
+                <a href="https://github.com/SEU_USUARIO/amiro-bot" class="text-gray-200 hover:underline flex items-center" rel="nofollow"><i class='bx bxl-github mr-1' aria-hidden="true"></i>GitHub</a>
+                <a href="https://amiro-bot.discloud.app" class="text-gray-200 hover:underline flex items-center" rel="nofollow"><i class='bx bxs-tachometer mr-1' aria-hidden="true"></i>Dashboard</a>
             </p>
         </div>
     </footer>
 
     <!-- Script para Menu Hambúrguer -->
     <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
+        const menuToggle=document.querySelector('.menu-toggle');
+        const navMenu=document.querySelector('.nav-menu');
+        menuToggle.addEventListener('click',()=>{navMenu.classList.toggle('active');});
     </script>
+    <!-- Google Analytics (opcional, descomente e substitua UA-XXXXX-Y pelo seu ID)
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+    <script>
+        window.dataLayer=window.dataLayer||[];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js',new Date());
+        gtag('config','UA-XXXXX-Y');
+    </script>
+    -->
 </body>
 </html>
